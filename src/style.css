@@ -1,0 +1,122 @@
+:root {
+  --white: #fafafa;
+  --dark: #0f0f0f;
+  --black: #000000;
+  --backColor: #1f3140;
+  --componentColor: #203149;
+  --red: #de3431;
+  --green: #20c937;
+  --yellow: #c7ba28;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Thin.ttf");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf");
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  background-color: var(--backColor);
+  font-family: "Montserrat", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 35px;
+  background-color: var(--componentColor);
+  /* -webkit-app-region: drag; */
+}
+
+#title {
+  font-weight: normal;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.buttons {
+  display: flex;
+  height: 100%;
+}
+
+.btn {
+  color: var(--white);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  width: 35px;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  -ms-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+}
+
+.btn:hover {
+  background-color: rgba(240, 240, 240, 0.3);
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  -ms-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+}
+
+.minimizeBtn {
+  background-image: url("assets/icons/icon_minimize.svg");
+}
+
+.resBtn {
+  background-image: url("assets/icons/icon_restore.svg");
+}
+
+.maxBtn {
+  background-image: url("assets/icons/icon_maximize.svg");
+}
+
+.closeBtn {
+  background-image: url("assets/icons/icon_close.svg");
+}
+.closeBtn:hover {
+  background-color: rgba(240, 0, 0, 0.7);
+}
+
+webview {
+  display: inline-flex;
+  width: 100vw;
+  height: calc(100vh - 30px);
+}

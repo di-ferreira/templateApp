@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="titleBar">
+    <h1 id="title">Delivery App</h1>
+    <div class="buttons">
+      <button id="minimizeBtn" class="btn minimizeBtn"></button>
+      <button id="maxResBtn" class="btn maxBtn"></button>
+      <button id="closeBtn" class="btn closeBtn"></button>
+    </div>
+  </header>
+  <webview src="http://localhost:3000"></webview>
+  <script src="./renderer.js"></script>
+</body>
+
 </html>
