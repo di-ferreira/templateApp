@@ -29,7 +29,23 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   ipc.on('closeApp', () => {
-    console.log('fechado')
+    if (process.platform !== 'darwin') {
+      app.quit();
+    }
+  });
+
+  ipc.on('maxRestore', () => {
+    if (mainWindow.isMaximized()) {
+      mainWindow.webContents.send('isRestored');
+      mainWindow.restore();
+    } else {
+      mainWindow.webContents.send('isMaximized');
+      mainWindow.maximize();
+    }
+  });
+
+  ipc.on('minimize', () => {
+    mainWindow.minimize();
   });
 
   // Open the DevTools.
@@ -45,8 +61,6 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
