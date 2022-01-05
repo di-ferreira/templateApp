@@ -1,6 +1,5 @@
 const { ipcRenderer } = require('electron');
 const ipc = ipcRenderer;
-
 const maxResBtn = document.getElementById('maxResBtn');
 
 const changeMaxResBtn = (isMaximizedApp) => {
