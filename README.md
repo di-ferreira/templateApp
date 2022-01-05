@@ -15,4 +15,4 @@ module.exports = {
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/di-ferreira/templateApp/blob/master/LICENSE)
